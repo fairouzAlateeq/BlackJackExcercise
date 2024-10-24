@@ -28,17 +28,25 @@ public class Card {
         }
     }
     public int getPointValue(){
-        int res = 0;
-// only return the value if the card is face up
-        if(isFaceUp){
-// determine point value and return it
-// A = 11
-// K, Q, J = 10
-// all numeric cards are equal to their face value
+        // only return the value if the card is face up
+        if (isFaceUp) {
+            // determine point value and return it
+            // A = 11
+            // K, Q, J = 10
+            // all numeric cards are equal to their face value
+            switch (value) {
+                case "A":
+                    return 11;
+                case "K":
+                case "Q":
+                case "J":
+                    return 10;
+                default:
+                    return Integer.parseInt(value);
+            }
         } else {
-            return res;
+            return 0;
         }
-        return res;
 
         }
     public boolean isFaceUp(){

@@ -9,7 +9,7 @@ public class Hand {
     }
     // A Card is dealt to the Hand and the Hand is responsible
 // to store the card
-    public void Deal(Card card){
+    public void deal(Card card){
         cards.add(card);
     }
     public int getSize(){
@@ -25,6 +25,13 @@ public class Hand {
             card.flip(); // hide the card again
         }
         return value;
+    }
+    public void displayCards(){
+        for(Card card: cards) {
+             card.flip();
+            System.out.println(card.getValue() + " of " + card.getSuit());
+            card.flip();
+        }
     }
 }
 
